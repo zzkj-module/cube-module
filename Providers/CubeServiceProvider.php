@@ -100,7 +100,7 @@ class CubeServiceProvider extends ServiceProvider
 
         $this->publishes([
             $sourcePath => $assetPath
-        ], ['assets', $this->moduleNameLower . '-module-assets']);
+        ], $this->moduleNameLower . '-module-assets');
     }
 
     /**
