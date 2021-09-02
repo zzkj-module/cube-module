@@ -1,0 +1,13 @@
+{
+    "name": "Cube",
+    "alias": "cube",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Cube\\Providers\\CubeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
