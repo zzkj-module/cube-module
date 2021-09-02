@@ -18,7 +18,6 @@ class CubeServiceProvider extends ServiceProvider
     protected $moduleNameLower = 'cube';
     protected $moduleConfigArr = [];
     protected $moduleView = '';
-    protected $moduleAsset = '';
 
     /**
      * Boot the application events.
@@ -32,12 +31,10 @@ class CubeServiceProvider extends ServiceProvider
             "config" => $this->moduleNameLower . "config",
         ];
         $this->moduleView = $this->moduleNameLower . "view";
-        $this->moduleAsset = $this->moduleNameLower . "asset";
 
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
-        $this->registerAssets();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
     }
 
@@ -85,22 +82,6 @@ class CubeServiceProvider extends ServiceProvider
         ], ['views', $this->moduleNameLower . '-module-views']);
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleView);
-    }
-
-    /**
-     * Register assets.
-     * 发布资源
-     * @return void
-     */
-    public function registerAssets()
-    {
-        $assetPath = database_path('../public/' . $this->moduleAsset);
-
-        $sourcePath = module_path($this->moduleName, 'Resources/assets');
-
-        $this->publishes([
-            $sourcePath => $assetPath
-        ], $this->moduleNameLower . '-module-assets');
     }
 
     /**
