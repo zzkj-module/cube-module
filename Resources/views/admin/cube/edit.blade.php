@@ -72,7 +72,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">{{$style}}</label>
             <div class="layui-input-block">
-                <img style="width: 100%; border: 1px solid rgb(238, 238, 238);" src="{{ asset('cubeasset/img/img-cube-demo-'.$k.'.png') }}" alt="{{$style}}" />
+                <img style="width: 100%; border: 1px solid rgb(238, 238, 238);" src="{{ asset('modules/cube/img/img-cube-demo-'.$k.'.png') }}" alt="{{$style}}" />
                 <div style="font-size: 10px; color: #31708f; display: @if($k > 0) none @endif">单图的图片高度不限定，高度根据原图比例自动调整。</div>
             </div>
         </div>
